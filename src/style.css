@@ -11,12 +11,12 @@ html, body, #app {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #fafafa;
-  color: #000;
+  background-color: #0a0a0a;
+  color: #fff;
   line-height: 1.5;
 }
 
-/* Neobrutalist Design */
+/* Neobrutalist Design - Dark Theme with Gradients */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -28,16 +28,16 @@ button {
   font-size: 16px;
   font-weight: 600;
   padding: 12px 24px;
-  border: 2px solid #000;
-  background-color: #fff;
-  color: #000;
+  border: 2px solid #fff;
+  background-color: #0a0a0a;
+  color: #fff;
   cursor: pointer;
   transition: all 0.1s ease;
 }
 
 button:hover {
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: #0a0a0a;
 }
 
 button:active {
@@ -45,28 +45,58 @@ button:active {
 }
 
 button.primary {
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: #0a0a0a;
 }
 
 button.primary:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: #0a0a0a;
+  color: #fff;
+}
+
+/* Green gradient for donate buttons */
+button.donate {
+  background: linear-gradient(135deg, #00cc44 0%, #00aa22 100%);
+  border-color: #00ff55;
+  color: #0a0a0a;
+}
+
+button.donate:hover {
+  background: linear-gradient(135deg, #00ff55 0%, #00dd33 100%);
+  border-color: #00ff55;
+  color: #0a0a0a;
+}
+
+/* Red gradient for request buttons */
+button.request {
+  background: linear-gradient(135deg, #ff3333 0%, #cc0000 100%);
+  border-color: #ff6666;
+  color: #fff;
+}
+
+button.request:hover {
+  background: linear-gradient(135deg, #ff6666 0%, #ff3333 100%);
+  border-color: #ff6666;
+  color: #fff;
 }
 
 input, textarea, select {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   padding: 10px 12px;
-  border: 2px solid #000;
-  background-color: #fff;
-  color: #000;
+  border: 2px solid #fff;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #888;
 }
 
 input:focus, textarea:focus, select:focus {
   outline: none;
-  border-color: #000;
-  box-shadow: 2px 2px 0 #000;
+  border-color: #fff;
+  box-shadow: 2px 2px 0 #fff;
 }
 
 textarea {
@@ -136,9 +166,9 @@ p {
 
 /* Cards */
 .card {
-  border: 2px solid #000;
+  border: 2px solid #fff;
   padding: 20px;
-  background-color: #fff;
+  background-color: #0a0a0a;
   margin-bottom: 16px;
 }
 
@@ -156,7 +186,7 @@ p {
 
 .list-item {
   padding: 12px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #333;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -167,10 +197,49 @@ p {
 }
 
 .badge {
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: #0a0a0a;
   padding: 4px 8px;
   font-size: 12px;
   font-weight: 600;
   border-radius: 0;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #0a0a0a;
+  border: 2px solid #fff;
+  padding: 40px;
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Section-specific styling */
+.donate-section {
+  border: 2px solid #00ff55;
+}
+
+.donate-section h2 {
+  color: #00ff55;
+}
+
+.request-section {
+  border: 2px solid #ff6666;
+}
+
+.request-section h2 {
+  color: #ff6666;
 }

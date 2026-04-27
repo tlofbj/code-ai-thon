@@ -23,7 +23,7 @@
         </div>
       </form>
 
-      <div class="items-card">
+      <div class="items-card donate-section">
         <h2>Items to Donate</h2>
         <div v-if="items.length === 0" class="empty-state">
           No items added yet
@@ -40,21 +40,29 @@
       </div>
 
       <div class="action-buttons">
-        <button @click="handleSubmit" class="primary">Submit Donation</button>
+        <button @click="handleSubmit" :disabled="items.length === 0" class="donate">Submit Donation</button>
         <button @click="$router.push('/')">Cancel</button>
       </div>
     </div>
+
+    <LoginModal :isOpen="showLoginModal" @login="completeSubmit" @close="showLoginModal = false" />
   </div>
 </template>
 
 <script>
+import LoginModal from '../components/LoginModal.vue'
+
 export default {
   name: 'Donate',
+  components: {
+    LoginModal
+  },
   data() {
     return {
       itemName: '',
       itemQty: 1,
-      items: []
+      items: [],
+      showLoginModal: false
     }
   },
   methods: {
@@ -71,12 +79,14 @@ export default {
     removeItem(index) {
       this.items.splice(index, 1)
     },
-    async handleSubmit() {
+    handleSubmit() {
       if (this.items.length === 0) {
         alert('Add at least one item')
         return
       }
-
+      this.showLoginModal = true
+    },
+    async completeSubmit() {
       try {
         const userId = localStorage.getItem('userId')
         const response = await fetch('/api/donations', {
@@ -100,13 +110,13 @@ export default {
 .donate-page {
   min-height: 100vh;
   padding: 40px 0;
-  background-color: #fafafa;
+  background-color: #0a0a0a;
 }
 
 .form-card {
-  border: 2px solid #000;
+  border: 2px solid #fff;
   padding: 24px;
-  background-color: #fff;
+  background-color: #0a0a0a;
   margin-bottom: 32px;
 }
 
@@ -128,9 +138,9 @@ export default {
 }
 
 .items-card {
-  border: 2px solid #000;
+  border: 2px solid #fff;
   padding: 24px;
-  background-color: #fff;
+  background-color: #0a0a0a;
   margin-bottom: 32px;
 }
 
@@ -139,7 +149,7 @@ h2 {
 }
 
 .empty-state {
-  color: #999;
+  color: #666;
   font-style: italic;
   padding: 40px 0;
   text-align: center;
@@ -150,7 +160,7 @@ h2 {
   justify-content: space-between;
   align-items: center;
   padding: 12px 0;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #333;
 }
 
 .list-item:last-child {
@@ -164,20 +174,20 @@ h2 {
 
 .item-qty {
   font-size: 14px;
-  color: #666;
+  color: #888;
 }
 
 .remove-btn {
   padding: 6px 12px;
   font-size: 14px;
-  background-color: #fff;
-  border: 2px solid #e0e0e0;
-  color: #000;
+  background-color: #0a0a0a;
+  border: 2px solid #555;
+  color: #fff;
 }
 
 .remove-btn:hover {
-  background-color: #f5f5f5;
-  border-color: #000;
+  background-color: #555;
+  border-color: #fff;
 }
 
 .action-buttons {
@@ -190,5 +200,15 @@ h2 {
   width: 100%;
   padding: 14px;
   font-size: 16px;
+}
+
+.action-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.action-buttons button:disabled:hover {
+  background-color: #0a0a0a;
+  color: #fff;
 }
 </style>

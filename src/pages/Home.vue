@@ -1,16 +1,13 @@
 <template>
   <div class="home-page">
     <div class="container">
-      <div class="header">
-        <h1>DonateMatch</h1>
-        <button @click="handleLogout" class="logout-btn">Logout</button>
-      </div>
+      <h1>DonateMatch</h1>
 
       <div class="action-buttons">
-        <button @click="$router.push('/donate')" class="action-btn primary">
+        <button @click="$router.push('/donate')" class="action-btn donate">
           Donate What I Have
         </button>
-        <button @click="$router.push('/request')" class="action-btn primary">
+        <button @click="$router.push('/request')" class="action-btn request">
           Request for What I Need
         </button>
       </div>
@@ -84,11 +81,6 @@ export default {
       } catch (error) {
         console.error('Fetch error:', error)
       }
-    },
-    handleLogout() {
-      localStorage.removeItem('phoneNumber')
-      localStorage.removeItem('userId')
-      this.$router.push('/login')
     }
   }
 }
@@ -98,23 +90,11 @@ export default {
 .home-page {
   min-height: 100vh;
   padding: 40px 0;
-  background-color: #fafafa;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 40px;
-}
-
-.logout-btn {
-  padding: 8px 16px;
-  font-size: 14px;
+  background-color: #0a0a0a;
 }
 
 h1 {
-  margin-bottom: 0;
+  margin-bottom: 40px;
 }
 
 .action-buttons {
@@ -145,9 +125,9 @@ h1 {
 }
 
 .list-section {
-  border: 2px solid #000;
+  border: 2px solid #fff;
   padding: 24px;
-  background-color: #fff;
+  background-color: #0a0a0a;
 }
 
 h2 {
@@ -159,7 +139,7 @@ h2 {
 }
 
 .empty-state {
-  color: #999;
+  color: #666;
   font-style: italic;
   padding: 40px 0;
   text-align: center;
@@ -167,7 +147,7 @@ h2 {
 
 .list-item {
   padding: 12px 0;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #333;
 }
 
 .list-item:last-child {
@@ -181,6 +161,6 @@ h2 {
 
 .item-qty {
   font-size: 14px;
-  color: #666;
+  color: #888;
 }
 </style>
