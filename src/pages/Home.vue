@@ -23,7 +23,7 @@
               <li v-for="item in donations" :key="item.id" class="list-item">
                 <div>
                   <div class="item-name">{{ item.name }}</div>
-                  <div class="item-qty">Qty: {{ item.quantity }}</div>
+                  <div class="item-qty">Amount: {{ item.amount }}</div>
                 </div>
               </li>
             </ul>
@@ -40,7 +40,7 @@
               <li v-for="item in requests" :key="item.id" class="list-item">
                 <div>
                   <div class="item-name">{{ item.name }}</div>
-                  <div class="item-qty">Qty: {{ item.quantity }}</div>
+                  <div class="item-qty">Amount: {{ item.amount }}</div>
                 </div>
               </li>
             </ul>

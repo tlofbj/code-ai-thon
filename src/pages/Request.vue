@@ -12,10 +12,9 @@
             required
           />
           <input
-            v-model.number="itemQty"
-            type="number"
-            placeholder="Qty"
-            min="1"
+            v-model="itemAmount"
+            type="text"
+            placeholder="Amount (e.g., 2 kg, 1 box)"
             required
             class="qty-input"
           />
@@ -32,7 +31,7 @@
           <li v-for="(item, index) in items" :key="index" class="list-item">
             <div>
               <div class="item-name">{{ item.name }}</div>
-              <div class="item-qty">Qty: {{ item.quantity }}</div>
+              <div class="item-qty">Amount: {{ item.amount }}</div>
             </div>
             <button @click="removeItem(index)" class="remove-btn">Remove</button>
           </li>
@@ -60,20 +59,20 @@ export default {
   data() {
     return {
       itemName: '',
-      itemQty: 1,
+      itemAmount: '',
       items: [],
       showLoginModal: false
     }
   },
   methods: {
     handleAddItem() {
-      if (this.itemName.trim()) {
+      if (this.itemName.trim() && this.itemAmount.trim()) {
         this.items.push({
           name: this.itemName,
-          quantity: this.itemQty
+          amount: this.itemAmount
         })
         this.itemName = ''
-        this.itemQty = 1
+        this.itemAmount = ''
       }
     },
     removeItem(index) {
