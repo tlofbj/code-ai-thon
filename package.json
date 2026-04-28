@@ -9,13 +9,13 @@
     "server": "node server.js"
   },
   "dependencies": {
-    "vue": "^3.4.0",
-    "vue-router": "^4.2.0",
-    "axios": "^1.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
     "express": "^4.18.0",
-    "sqlite3": "^5.1.6",
     "sqlite": "^5.0.1",
-    "cors": "^2.8.5"
+    "sqlite3": "^5.1.6",
+    "vue": "^3.4.0",
+    "vue-router": "^4.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.0",

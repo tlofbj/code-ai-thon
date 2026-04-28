@@ -11,12 +11,12 @@ html, body, #app {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #0a0a0a;
-  color: #fff;
+  background-color: #fdfaf3;
+  color: #3f2f22;
   line-height: 1.5;
 }
 
-/* Neobrutalist Design - Dark Theme with Gradients */
+/* Light beige base theme with accent highlights */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -28,16 +28,16 @@ button {
   font-size: 16px;
   font-weight: 600;
   padding: 12px 24px;
-  border: 2px solid #fff;
-  background-color: #0a0a0a;
-  color: #fff;
+  border: 2px solid #d9c7ad;
+  background-color: #fffdf8;
+  color: #3f2f22;
   cursor: pointer;
   transition: all 0.1s ease;
 }
 
 button:hover {
-  background-color: #fff;
-  color: #0a0a0a;
+  background-color: #f6ecdc;
+  color: #3f2f22;
 }
 
 button:active {
@@ -45,13 +45,13 @@ button:active {
 }
 
 button.primary {
-  background-color: #fff;
-  color: #0a0a0a;
+  background-color: #f8efdf;
+  color: #3f2f22;
 }
 
 button.primary:hover {
-  background-color: #0a0a0a;
-  color: #fff;
+  background-color: #eedfc7;
+  color: #3f2f22;
 }
 
 /* Green gradient for donate buttons */
@@ -84,19 +84,19 @@ input, textarea, select {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   padding: 10px 12px;
-  border: 2px solid #fff;
-  background-color: #1a1a1a;
-  color: #fff;
+  border: 2px solid #d9c7ad;
+  background-color: #fffdf8;
+  color: #3f2f22;
 }
 
 input::placeholder, textarea::placeholder {
-  color: #888;
+  color: #8d6d52;
 }
 
 input:focus, textarea:focus, select:focus {
   outline: none;
-  border-color: #fff;
-  box-shadow: 2px 2px 0 #fff;
+  border-color: #cdb48f;
+  box-shadow: 2px 2px 0 #e8d8bf;
 }
 
 textarea {
@@ -166,9 +166,9 @@ p {
 
 /* Cards */
 .card {
-  border: 2px solid #fff;
+  border: 2px solid #d9c7ad;
   padding: 20px;
-  background-color: #0a0a0a;
+  background-color: #fffdf8;
   margin-bottom: 16px;
 }
 
@@ -186,7 +186,7 @@ p {
 
 .list-item {
   padding: 12px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #e4d4bc;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -197,8 +197,8 @@ p {
 }
 
 .badge {
-  background-color: #fff;
-  color: #0a0a0a;
+  background-color: #f2e4cf;
+  color: #3f2f22;
   padding: 4px 8px;
   font-size: 12px;
   font-weight: 600;
@@ -212,7 +212,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(52, 37, 26, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -220,8 +220,8 @@ p {
 }
 
 .modal-content {
-  background-color: #0a0a0a;
-  border: 2px solid #fff;
+  background-color: #fffdf8;
+  border: 2px solid #d9c7ad;
   padding: 40px;
   max-width: 400px;
   width: 100%;

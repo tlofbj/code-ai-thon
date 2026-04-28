@@ -12,7 +12,7 @@
               id="phone"
               v-model="phone"
               type="tel"
-              placeholder="+1 (555) 123-4567"
+              placeholder="+1 (808) 123-4567"
               required
             />
           </div>
@@ -38,6 +38,8 @@
 </template>
 
 <script>
+import { apiFetch } from '../api.js'
+
 export default {
   name: 'Login',
   data() {
@@ -49,7 +51,7 @@ export default {
   methods: {
     async handleLogin() {
       try {
-        const response = await fetch('/api/auth/login', {
+        const response = await apiFetch('/api/auth/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ phone: this.phone, code: this.code })
@@ -75,13 +77,13 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fafafa;
+  background-color: #fdfaf3;
 }
 
 .login-card {
-  border: 2px solid #000;
+  border: 2px solid #d9c7ad;
   padding: 48px;
-  background-color: #fff;
+  background-color: #fffdf8;
   width: 100%;
   max-width: 400px;
 }
@@ -92,7 +94,7 @@ h1 {
 
 .subtitle {
   font-size: 14px;
-  color: #666;
+  color: #8d6d52;
   margin-bottom: 32px;
 }
 
@@ -115,7 +117,7 @@ input {
 
 .demo-text {
   font-size: 12px;
-  color: #999;
+  color: #8d6d52;
   text-align: center;
   margin-top: 16px;
 }

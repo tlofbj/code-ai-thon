@@ -13,6 +13,6 @@ export default {
 <style scoped>
 .app {
   min-height: 100vh;
-  background-color: #fafafa;
+  background-color: #fdfaf3;
 }
 </style>
